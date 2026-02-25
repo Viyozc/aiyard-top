@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0c0c0f;
+  --foreground: #e4e4e7;
+  --grid-color: rgba(255, 255, 255, 0.03);
+  --gradient-start: #a855f7;
+  --gradient-end: #3b82f6;
+  --accent-green: #22c55e;
+  --glow-purple: rgba(168, 85, 247, 0.15);
+  --glow-blue: rgba(59, 130, 246, 0.12);
 }
 
 @theme inline {
@@ -12,15 +18,66 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Tech-style grid background */
+.tech-grid {
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Ambient gradient orbs */
+.tech-glow::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 0%, var(--glow-purple) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, var(--glow-blue) 0%, transparent 50%);
+  z-index: 0;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  transition: opacity 0.2s, box-shadow 0.2s;
+}
+.btn-gradient:hover {
+  opacity: 0.95;
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.4);
+}
+
+/* Ghost button - border only */
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: white;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Card with neon green border (accent) */
+.card-glow-green {
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.1);
 }

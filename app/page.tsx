@@ -1,65 +1,140 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      {/* Hero */}
+      <section className="relative border-b border-white/10 px-4 py-20 sm:px-6 sm:py-28">
+        <div className="mx-auto max-w-5xl text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            Build with{" "}
+            <span className="gradient-text">Intelligence</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+          <p className="mt-6 max-w-2xl mx-auto text-lg text-zinc-400 sm:text-xl">
+            Independent developer offering software services and app development. We focus on building simple, reliable products and custom solutions.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="btn-gradient inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold uppercase tracking-wider"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Contact Us
+            </Link>
+            <Link
+              href="/#products"
+              className="btn-ghost inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold uppercase tracking-wider"
             >
-              Learning
-            </a>{" "}
-            center.
+              View Products
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section className="relative border-b border-white/10 px-4 py-16 sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+            About <span className="gradient-text">Us</span>
+          </h2>
+          <p className="mt-4 max-w-3xl text-zinc-400 leading-relaxed">
+            Aiyard is run by an independent developer focused on solving real needs through software and apps. We build mobile apps (iOS / Android), web applications, and tools with an emphasis on user experience and long-term maintenance. For partnerships or custom development, please reach out via the contact details below.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Products - Explore cards style */}
+      <section
+        id="products"
+        className="relative border-b border-white/10 px-4 py-16 sm:px-6 sm:py-20"
+      >
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+            Products & <span className="gradient-text">Services</span>
+          </h2>
+          <p className="mt-2 text-zinc-400">
+            We develop and maintain the following products. Find more on app stores or on this website.
+          </p>
+          <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <li className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/[0.07]">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-lg font-bold text-white">
+                ⚡
+              </div>
+              <h3 className="text-lg font-semibold text-white">
+                Flash Form
+              </h3>
+              <p className="mt-2 text-sm text-zinc-400">
+                Chrome extension to fill out forms faster with AI-powered suggestions.
+              </p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/[0.07]">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-lg font-bold text-white">
+                🤖
+              </div>
+              <h3 className="text-lg font-semibold text-white">
+                AI Fans
+              </h3>
+              <p className="mt-2 text-sm text-zinc-400">
+                Find the best fans for your favorite artists.
+              </p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/[0.07]">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-lg font-bold text-white">
+                📱
+              </div>
+              <h3 className="text-lg font-semibold text-white">
+                More Apps
+              </h3>
+              <p className="mt-2 text-sm text-zinc-400">
+                Additional products in development. Stay tuned.
+              </p>
+              <span className="mt-3 inline-block text-xs font-medium uppercase tracking-wider text-zinc-500">
+                1 Active
+              </span>
+            </li>
+            <li className="card-glow-green rounded-xl border bg-white/5 p-6 backdrop-blur-sm transition-all hover:bg-white/[0.07]">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/20 text-lg font-bold text-emerald-400">
+                ◉
+              </div>
+              <h3 className="text-lg font-semibold text-white">
+                In Queue
+              </h3>
+              <p className="mt-2 text-sm text-zinc-400">
+                New projects and updates coming soon.
+              </p>
+              <span className="mt-3 inline-block text-xs font-semibold uppercase tracking-wider text-emerald-400">
+                Coming Soon
+              </span>
+            </li>
+          </ul>
+          <p className="mt-8 text-sm text-zinc-500">
+            For custom development needs, please{" "}
+            <Link href="/contact" className="text-white underline underline-offset-2 hover:no-underline">
+              contact us
+            </Link>
+            .
+          </p>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Contact CTA - Deploy / CTA block */}
+      <section className="relative border-b border-white/10 px-4 py-16 sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-5xl">
+          <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-14 text-center backdrop-blur-sm sm:px-12">
+            <h2 className="text-2xl font-bold text-white sm:text-3xl">
+              Deploy Your <span className="gradient-text">Project</span>
+            </h2>
+            <p className="mt-4 max-w-xl mx-auto text-zinc-400">
+              For custom software, technical collaboration, or product inquiries, please reach out via email or our contact page.
+            </p>
+            <Link
+              href="/contact"
+              className="btn-gradient mt-8 inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold uppercase tracking-wider"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
