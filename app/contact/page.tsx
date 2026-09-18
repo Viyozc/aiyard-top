@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ProductFamily from "../components/ProductFamily";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -46,6 +47,8 @@ export default function ContactPage() {
           </ul>
         </section>
       </div>
+
+      <ProductFamily />
     </div>
   );
 }

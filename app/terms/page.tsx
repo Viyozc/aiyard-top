@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ProductFamily from "../components/ProductFamily";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -85,6 +86,8 @@ export default function TermsPage() {
           </p>
         </section>
       </div>
+
+      <ProductFamily />
     </article>
   );
 }

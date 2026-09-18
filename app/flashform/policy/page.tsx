@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ProductFamily from "../../components/ProductFamily";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -137,6 +138,8 @@ export default function FlashformPolicyPage() {
           </p>
         </section>
       </div>
+
+      <ProductFamily />
     </article>
   );
 }
